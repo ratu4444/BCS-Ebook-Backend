@@ -14,8 +14,4 @@ use App\Http\Controllers\EbookController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/master',[EbookController::class, 'index']);
+Route::get('/',[EbookController::class, 'index']);

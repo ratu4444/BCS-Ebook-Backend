@@ -1,8 +1,8 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
-                    class="logo-name">Otika</span>
+            <a href="index.html"> <img alt="image" src="{{ asset('assets/img/ebook-logo.webp') }}" class="header-logo" /> <span
+                    class="logo-name">BCS Ebook</span>
             </a>
         </div>
         <ul class="sidebar-menu">
