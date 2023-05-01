@@ -15,3 +15,5 @@ use App\Http\Controllers\EbookController;
 */
 
 Route::get('/',[EbookController::class, 'index']);
+
+Route::get('/admin',[EbookController::class, 'admin'])->name('admin');

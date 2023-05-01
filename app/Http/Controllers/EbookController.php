@@ -9,4 +9,8 @@ class EbookController extends Controller
     public function index(){
         return view('dashboard');
     }
+
+    public function admin(){
+        return view('admins.admin');
+    }
 }
