@@ -34,6 +34,7 @@
                     </div>
                     <div class="card-footer text-right">
                         <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary">Rubmit</button>
                     </div>
                 </form>
             </div>
