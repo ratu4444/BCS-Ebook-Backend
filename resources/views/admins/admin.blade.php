@@ -4,7 +4,7 @@
 
     <div class="row justify-content-center">
         <div class="col-8 col-md-8 col-lg-8">
-            <div class="card">
+            <div class="card card-primary">
                 <form method="post" action="{{ route('storeAdmin') }}" class="needs-validation" novalidate>
                     @csrf
                     <div class="card-header">

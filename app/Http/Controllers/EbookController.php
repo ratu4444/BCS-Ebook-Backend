@@ -37,7 +37,6 @@ class EbookController extends Controller
             ]);
             return redirect()->route('adminShow');
 
-            return $e->getMessage();
 
 
     }
@@ -45,5 +44,27 @@ class EbookController extends Controller
     public function adminShow(Request $request){
         $shows = Admin::all();
         return view('admins.adminShow', compact('shows'));
+    }
+
+    public function adminActive($id){
+//        $active = Admin::where('id', $id)
+//            ->first();
+
+        Admin::where('id', $id)
+            ->first()
+            ->update(['is_active' => 1]);
+
+        return redirect()->back();
+
+    }
+
+    public function adminInactive($id){
+        Admin::where('id', $id)
+            ->first()
+            ->update(['is_active' => 0]);
+
+        return redirect()->back();
+
+
     }
 }
