@@ -3,6 +3,15 @@
 @section('main-content')
 
 <div class="card-body">
+    <div class="card-header d-flex justify-content-between mt-1">
+    <div>
+        <h5><b>Admins</b></h5>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="{{ route('admin') }}"><b>Add Admin</b></a>
+    </div>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-bordered table-md">
             <tr>
@@ -10,6 +19,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Number</th>
+
                 <th>Action</th>
             </tr>
             @foreach($shows as $show)
@@ -19,7 +29,9 @@
                 <td>{{ $show->email }}</td>
                 <td>{{ $show->number}}</td>
 
-                <td><a href="#" class="btn btn-primary">Update</a> <a href="#" class="btn btn-primary">Delete</a></td>
+
+                <td>
+                    <div class="badge badge-success"> Active</div> <a href="#" class="btn btn-primary">Update</a> <a href="#" class="btn btn-primary">Delete</a></td>
             </tr>
             @endforeach
 

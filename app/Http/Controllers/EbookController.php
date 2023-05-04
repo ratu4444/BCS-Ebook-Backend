@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use App\Models\User;
 use function GuzzleHttp\Promise\all;
@@ -19,13 +20,26 @@ class EbookController extends Controller
 
     public function storeAdmin(Request $request){
 
-        $admin = Admin::create([
-           'name' => $request->name,
-            'email' => $request->email,
-            'number' => $request->phone,
-            'password' => $request->password
-        ]);
-        return redirect()->route('adminShow');
+        $validation = $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:admins,email',
+            'phone' => 'required|integer|min:11',
+            'password' => 'required|min:8'
+         ]);
+
+
+
+            $admin = Admin::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'number' => $request->phone,
+                'password' => $request->password
+            ]);
+            return redirect()->route('adminShow');
+
+            return $e->getMessage();
+
+
     }
 
     public function adminShow(Request $request){

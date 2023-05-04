@@ -11,7 +11,7 @@
                 <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown">
-                <a href="{{ route('admin') }}" class=""><i
+                <a href="{{ route('adminShow') }}" class=""><i
                         data-feather="briefcase"></i><span>Admin</span></a>
             </li>
             <li class="dropdown">
