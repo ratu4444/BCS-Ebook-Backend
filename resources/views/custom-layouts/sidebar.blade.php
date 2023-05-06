@@ -4,13 +4,15 @@
             <a href="index.html"> <img alt="image" src="{{ asset('assets/img/ebook-logo.webp') }}" class="header-logo" /> <span
                     class="logo-name">BCS Ebook</span>
             </a>
+
+{{--            {{ Route::is('dashboard') ? 'active': '' }}--}}
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
                 <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
-            <li class="dropdown">
+            <li class="dropdown {{ Route::is('adminShow') ? 'active' : "" }}">
                 <a href="{{ route('adminShow') }}" class=""><i
                         data-feather="briefcase"></i><span>Admin</span></a>
             </li>

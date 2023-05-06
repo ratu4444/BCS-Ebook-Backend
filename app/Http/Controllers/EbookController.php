@@ -28,7 +28,6 @@ class EbookController extends Controller
          ]);
 
 
-
             $admin = Admin::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -39,10 +38,12 @@ class EbookController extends Controller
 
 
 
+
+
     }
 
     public function adminShow(Request $request){
-        $shows = Admin::all();
+        $shows = Admin::paginate(5);
         return view('admins.adminShow', compact('shows'));
     }
 
