@@ -43,7 +43,18 @@ class EbookController extends Controller
     }
 
     public function adminShow(Request $request){
-        $shows = Admin::paginate(5);
+
+        $shows = Admin::query();
+        $search = $request->search;
+
+        if($search){
+            $shows->where('name', 'like', "%$search%")
+                ->orWhere('email', 'like', "%$search%")
+            ->orWhere('number', 'like', "%$search%");
+        }
+
+      $shows = $shows->paginate(10);
+
         return view('admins.adminShow', compact('shows'));
     }
 
